@@ -4,4 +4,11 @@ Nama: Muhammad Harafsan Alhad, Kelas: TI-3C, NIM: 2241720059
 
 ## Praktikum 1
 
-- [Praktikum 1](assets/praktikum1.png)
+![Praktikum 1](assets/praktikum1.png)
+Menambahkan widget titleSection dengan mereturn beberapa widget
+
+## Praktikum 2
+
+![Praktikum 2](assets/praktikum2.png)
+Menambahkan variable buttonSection ke dalam body
+

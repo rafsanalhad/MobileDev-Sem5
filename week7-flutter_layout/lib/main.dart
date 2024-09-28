@@ -7,7 +7,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,7 +20,6 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
-
   final String title;
 
   @override
@@ -31,54 +29,90 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: Text("Harafsan Alhad Praktikum Layout"),
-        ),
-        body: Center(
-          child: Column(children: [
-            // Text('Hello World'),
-            titleSection()
-          ],)
-        ));
-  }
-}
+    // Memindahkan deklarasi color di dalam method build yang punya akses context
+    Color color = Theme.of(context).primaryColor;
 
-Widget titleSection() {
-  return (Container(
-    padding: const EdgeInsets.all(20),
-    child: Row(
-      children: [
-        Expanded(
-          /* soal 1*/
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              /* soal 2*/
-              Container(
-                padding: const EdgeInsets.only(bottom: 20),
-                child: const Text(
-                  'Wisata Gunung di Batu',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text("Harafsan Alhad Praktikum Layout"),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            titleSection(),
+            buttonSection(color), // Pastikan buttonSection menerima color
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget titleSection() {
+    return Container(
+      padding: const EdgeInsets.all(20),
+      child: Row(
+        children: [
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  padding: const EdgeInsets.only(bottom: 20),
+                  child: const Text(
+                    'Wisata Gunung di Batu',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
-              ),
-              Text(
-                'Batu, Malang, Indonesia',
-                style: TextStyle(fontSize: 20),
-              ),
-            ],
+                Text(
+                  'Batu, Malang, Indonesia',
+                  style: TextStyle(fontSize: 20),
+                ),
+              ],
+            ),
+          ),
+          Icon(
+            Icons.star,
+            color: Colors.green[500],
+          ),
+          const Text("41"),
+        ],
+      ),
+    );
+  }
+
+  Column _buildButtonColumn(Color color, IconData icon, String label) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(icon, color: color),
+        Container(
+          margin: const EdgeInsets.only(top: 8),
+          child: Text(
+            label,
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w400,
+              color: color,
+            ),
           ),
         ),
-        /* soal 3*/
-        Icon(
-          Icons.star,
-          color: Colors.green[500],
-        ),
-        const Text("41"),
       ],
-    ),
-  ));
+    );
+  }
+
+  // Memodifikasi buttonSection untuk menerima parameter color
+  Widget buttonSection(Color color) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        _buildButtonColumn(color, Icons.call, 'CALL'),
+        _buildButtonColumn(color, Icons.near_me, 'ROUTE'),
+        _buildButtonColumn(color, Icons.share, 'SHARE'),
+      ],
+    );
+  }
 }
