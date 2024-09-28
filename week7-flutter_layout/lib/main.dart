@@ -29,7 +29,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    // Memindahkan deklarasi color di dalam method build yang punya akses context
     Color color = Theme.of(context).primaryColor;
 
     return Scaffold(
@@ -40,8 +39,15 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           children: [
+            Image.asset(
+              'wisata.jpeg',
+              width: 600,
+              height: 240,
+              fit: BoxFit.cover,
+            ),
             titleSection(),
-            buttonSection(color), // Pastikan buttonSection menerima color
+            buttonSection(color),
+            textSection,
           ],
         ),
       ),
@@ -104,7 +110,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  // Memodifikasi buttonSection untuk menerima parameter color
   Widget buttonSection(Color color) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -116,3 +121,11 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+Widget textSection = Container(
+  padding: const EdgeInsets.all(32),
+  child: const Text(
+    'Ini adalah tempat wisata menakjubkan dengan pantai yang sangat indah.'
+    'Nama Muhammad Harafsan Alhad, NIM 2241720059.',
+    softWrap: true,
+  ),
+);
