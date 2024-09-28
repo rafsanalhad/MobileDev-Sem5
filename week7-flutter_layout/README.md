@@ -14,8 +14,12 @@ Menambahkan widget titleSection dengan mereturn beberapa widget
 
 Menambahkan variable buttonSection ke dalam body
 
-![Praktikum 3](assets/praktikum3.png)
+![Praktikum 4](assets/praktikum3.png)
 
-Menambahkan variable textsection serta beberapa img ke dalam main
+Menambahkan textsection ke dalam body
+
+![Praktikum 4](assets/praktikum4.png)
+
+Menambahkan img ke dalam main
 
 
