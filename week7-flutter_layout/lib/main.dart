@@ -34,10 +34,10 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text("Harafsan Alhad Praktikum Layout"),
+        title: Text("Layout Flutter: Harafsan Alhad NIM 2241720059"),
       ),
       body: Center(
-        child: Column(
+        child: ListView(
           children: [
             Image.asset(
               'wisata.jpeg',
