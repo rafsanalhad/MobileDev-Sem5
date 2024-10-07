@@ -1,16 +1,18 @@
 # week7_praktikum5
 
-A new Flutter project.
+Muhammad Harafsan Alhad
 
-## Getting Started
+Output Langkah 7: Menambahkan aksi pada ListView
+Output Layout Langkah 7
+![Screenshot Langkah 7](assets/images/outputlangkah7.png)
+Output Layout Langkah 7 Setelah Di Klik
+![Screenshot Langkah 7 klik](assets/images/outputlangkah7klik.png)
+Output Praktikum 2
+![Screenshoot Praktikum 2](assets/images/outputTugasPraktikum.png)
+Output Praktikum 2 Yang Sudah Diganti Layout dan Tambah Nama + NIM
+![Screenshot Praktikum 2 + NIM](assets/images/outputTugasPraktikumNIM.png)
+Output Akhir: 
+![Screenshot Output Akhir](assets/images/outputAkhir.png)
+![Screenshot Output Akhir](assets/images/outputAkhir2.png)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

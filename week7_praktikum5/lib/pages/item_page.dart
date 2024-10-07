@@ -1,26 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ItemPage extends StatelessWidget {
+  final String id; // Menyimpan ID yang diterima
+
   const ItemPage({
-    super.key,
-  });
+    Key? key,
+    required this.id,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final args =
-        ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+    // Mengambil parameter dari GoRouterState
+    final args = GoRouterState.of(context).extra as Map<String, dynamic>? ?? {};
+
     return Scaffold(
       appBar: AppBar(title: Text('Item Detail')),
       body: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-        
             Hero(
-              tag: 'product-image-${args['id']}', 
+              tag: 'product-image-$id', // Menggunakan id untuk tag Hero
               child: Image.asset(
-                'assets/images/${args['photo']}',
-                width: 100, 
+                'assets/images/${args['photo']}', // Mengambil foto dari args
+                width: 100,
                 height: 100,
               ),
             ),
@@ -30,10 +34,10 @@ class ItemPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('${args['name']}'),
-                Text('Price: ${args['price']}'),
-                Text('Stock: ${args['stock']}'),
-                Text('Rating: ${args['rating']}'),
+                Text('${args['name'] ?? 'Unknown Name'}'), // Default jika name null
+                Text('Price: ${args['price'] ?? 'N/A'}'), // Default jika price null
+                Text('Stock: ${args['stock'] ?? 'N/A'}'), // Default jika stock null
+                Text('Rating: ${args['rating'] ?? 'N/A'}'), // Default jika rating null
               ],
             ),
           ],

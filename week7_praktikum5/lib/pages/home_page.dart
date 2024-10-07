@@ -8,7 +8,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<Item> items = [
       Item(name: 'Sugar', price: 5000, photo: 'sugar.jpg', stock: 10, rating: 5),
-      Item(name: 'Salt', price: 2000, photo: 'sugar.jpg', stock: 5, rating: 4),
+      Item(name: 'Salt', price: 2000, photo: 'salt.jpg', stock: 5, rating: 4),
     ];
     return Scaffold(
       appBar: AppBar(title: Text('Shopping List')),
@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
             padding: EdgeInsets.all(16),
             color: Colors.blueAccent,
             child: Text(
-              'Muhammad Harafsan Alhad',
+              'Muhammad Harafsan Alhad 2241720059',
               style: TextStyle(color: Colors.white),
             ),
           ),
