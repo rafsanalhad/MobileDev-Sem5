@@ -19,7 +19,9 @@ Output Praktikum 2 Yang Sudah Diganti Layout dan Tambah Nama + NIM
 ![Screenshot Praktikum 2 + NIM](assets/images/outputTugasPraktikumNIM.png)
 
 Output Akhir: 
+
 ![Screenshot Output Akhir](assets/images/outputAkhir.png)
+
 ![Screenshot Output Akhir](assets/images/outputAkhir2.png)
 
 
