@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import './views/plan_screen.dart';
+import './provider/plan_provider.dart';
+import './plan.dart';
 
 
 void main() {
@@ -33,7 +35,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: PlanScreen(),
+      home: PlanProvider(
+    notifier: ValueNotifier<Plan>(const Plan()),
+    child: const PlanScreen(),
+   ),
     );
   }
 }
