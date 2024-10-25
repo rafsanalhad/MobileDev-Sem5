@@ -67,3 +67,62 @@ Penjelasan:
 Setelah menyelesaikan Langkah 9, widget SafeArea ditambahkan di bagian bawah tampilan untuk menampilkan completenessMessage, yang memberikan informasi mengenai progres penyelesaian tugas, seperti "3 out of 5 tasks completed". Penambahan ini meningkatkan pengalaman pengguna dengan memberikan umpan balik visual yang jelas tentang status rencana. Praktikum ini berfokus pada penggunaan InheritedWidget dan InheritedNotifier untuk mengelola data, memisahkan model dari tampilan, dan memungkinkan akses data yang efisien ke sub-widget tanpa perlu mengulang logika pengambilan data. Dengan menerapkan struktur ini, aplikasi dapat lebih mudah dikelola dan dipelihara, sekaligus mempertahankan keterbacaan kode, yang sangat penting dalam pengembangan aplikasi yang lebih kompleks.
 
 5. Kumpulkan laporan praktikum Anda berupa link commit atau repository GitHub ke spreadsheet yang telah disediakan!
+
+
+## Laporan Praktikum 3
+Tugas Praktikum 3: State di Multiple Screens
+
+1. Selesaikan langkah-langkah praktikum tersebut, lalu dokumentasikan berupa GIF hasil akhir praktikum beserta penjelasannya di file README.md! Jika Anda menemukan ada yang error atau tidak berjalan dengan baik, silakan diperbaiki sesuai dengan tujuan aplikasi tersebut dibuat.
+
+![Soal Gambar Praktikum 3](assets/images/praktikum%203.gif)
+
+2. Berdasarkan Praktikum 3 yang telah Anda lakukan, jelaskan maksud dari gambar diagram berikut ini!
+
+![Soal Gambar Praktikum 3](assets/images/soal.png)
+
+Jawaban: 
+
+Diagram Arsitektur Widget Tree Master Plan
+
+Diagram tersebut menunjukkan arsitektur widget tree dan navigasi pada aplikasi Master Plan yang terdiri dari dua screen utama:
+
+1. Sisi Kiri (Biru) - PlanCreatorScreen:
+
+* MaterialApp sebagai root widget
+* PlanProvider sebagai state management untuk menyimpan List<Plan>
+* PlanCreatorScreen sebagai halaman utama yang berisi:
+   * Column sebagai layout utama
+   * TextField untuk input rencana baru
+   * Expanded dengan ListView untuk menampilkan daftar plan
+
+2. Sisi Kanan (Hijau) - PlanScreen:
+
+* PlanScreen sebagai halaman detail yang menampilkan tasks dari sebuah plan
+* Scaffold sebagai struktur dasar halaman  
+* Column untuk layout yang berisi:
+   * Expanded dengan ListView untuk daftar task
+   * SafeArea dengan Text untuk menampilkan completeness message
+
+Tanda panah "Navigator Push" di tengah menunjukkan navigasi dari PlanCreatorScreen ke PlanScreen ketika user mengetuk salah satu plan di ListView. Ini diimplementasikan menggunakan:
+
+```dart
+Navigator.of(context).push(
+    MaterialPageRoute(builder: (_) => PlanScreen(plan: plan,))
+);
+```
+
+Diagram ini mengilustrasikan konsep "Lift State Up" dimana PlanProvider ditempatkan di level atas (MaterialApp) sehingga state List<Plan> dapat diakses oleh kedua screen dan dikelola secara terpusat. Hal ini memungkinkan:
+* Pembuatan plan baru di PlanCreatorScreen
+* Pengeditan task di PlanScreen
+* Sinkronisasi data antara kedua screen melalui PlanProvider
+
+Struktur ini menerapkan manajemen state yang efisien untuk aplikasi dengan multiple screen sambil tetap menjaga konsistensi data di seluruh aplikasi.
+
+3. Lakukan capture hasil dari Langkah 14 berupa GIF, kemudian jelaskan apa yang telah Anda buat!
+
+![Soal Gambar Praktikum 3](assets/images/praktikum%203.gif)
+
+Jawaban:
+Setelah menyelesaikan Langkah 14, telah dibuat fungsi baru untuk menampilkan daftar rencana yang telah ditambahkan pengguna. Widget _buildMasterPlans() memeriksa apakah ada rencana dalam daftar dan, jika tidak, menampilkan pesan bahwa pengguna belum memiliki rencana. Jika ada, daftar rencana ditampilkan menggunakan ListView.builder, dengan setiap item menampilkan nama rencana dan pesan progres. Pengguna dapat mengetuk item untuk membuka layar detail rencana yang bersangkutan. Dengan demikian, aplikasi kini mendukung multiple screens dan memungkinkan pengguna untuk mengelola beberapa rencana secara bersamaan, menjadikan pengalaman lebih interaktif dan informatif. Ini menunjukkan penerapan konsep "Lift State Up" dengan baik, memudahkan pengelolaan state di seluruh aplikasi.
+
+4. Kumpulkan laporan praktikum Anda berupa link commit atau repository GitHub ke spreadsheet yang telah disediakan!
