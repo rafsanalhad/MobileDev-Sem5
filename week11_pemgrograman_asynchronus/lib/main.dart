@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:async';
+import 'package:async/async.dart';
 
 void main() {
   runApp(const MyApp());
@@ -72,12 +73,37 @@ class _FuturePageState extends State<FuturePage> {
   }
 
   Future<void> calculate() async {
-    try{
-    await Future.delayed(const Duration(seconds: 5));
-    completer.complete(42);
-    } catch(e){
+    try {
+      await Future.delayed(const Duration(seconds: 5));
+      completer.complete(42);
+    } catch (e) {
       result = 'An error occured: $e';
     }
+  }
+
+  void returnFG() {
+    final futureGroup = FutureGroup<int>();
+
+    futureGroup.add(returnOneAsync());
+    futureGroup.add(returnTwoAsync());
+    futureGroup.add(returnThreeAsync());
+    final futures = Future.wait<int>([
+      returnOneAsync(),
+      returnTwoAsync(),
+      returnThreeAsync(),
+    ]);
+
+    futureGroup.close();
+
+    futureGroup.future.then((List<int> values) {
+      int total = 0;
+      for (int element in values) {
+        total += element;
+      }
+      setState(() {
+        result = total.toString();
+      });
+    });
   }
 
   String result = '';
@@ -115,11 +141,14 @@ class _FuturePageState extends State<FuturePage> {
             ElevatedButton(
                 child: Text('GO!'),
                 onPressed: () {
-                  getNumber().then((value){
-                    setState((){
-                      result = value.toString();
-                    });
-                  });
+                  // getNumber().then((value) {
+                  //   setState(() {
+                  //     result = value.toString();
+                  //   });
+                  // }).catchError((e) {
+                  //   result = 'An error occured: $e';
+                  // });
+                  returnFG();
                 }),
             const SizedBox(height: 20),
             if (isLoading)
