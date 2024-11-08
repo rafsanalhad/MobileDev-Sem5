@@ -1,16 +1,37 @@
-# week11_pemgrograman_asynchronus
+# Week 11 Pemrograman Asynchronous
 
-A new Flutter project.
+Nama: Muhammad Harafsan Alhad
+Kelas: TI-3C
+NIM: 2241720059
 
-## Getting Started
+## SS  Praktikum 1
+![output praktikum](assets/images/praktikum1.png)
+## SS  Praktikum 2
+![output praktikum](assets/images/praktikum2.png)
+## SS  Praktikum 3
+![output praktikum](assets/images/praktikum3.png)
+## SS  Praktikum 4
+![output praktikum](assets/images/praktikum4.png)
+## SS  Praktikum 5
+![output praktikum](assets/images/praktiku5.png)
+## SS  Praktikum 6
+![output praktikum](assets/images/praktikum6.png)
+## SS  Praktikum 7
+![output praktikum](assets/images/praktikum7.png)
+## SS  Praktikum 8
 
-This project is a starting point for a Flutter application.
+Output Awal:
 
-A few resources to get you started if this is your first Flutter project:
+![output praktikum](assets/images/praktikum8_1.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Kemudian: 
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![output praktikum](assets/images/praktikum8_2.png)
+
+Kemudian; 
+
+![output praktikum](assets/images/praktikum8_3.png)
+
+## SS  Praktikum 9
+![output praktikum](assets/images/praktikum9.png)
+
