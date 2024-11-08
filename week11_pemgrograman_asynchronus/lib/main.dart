@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:async';
 import 'package:async/async.dart';
+import 'geolocation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const FuturePage(),
+      home: const LocationScreen(),
     );
   }
 }
