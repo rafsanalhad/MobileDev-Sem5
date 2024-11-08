@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'dart:async';
 import 'package:async/async.dart';
 import 'geolocation.dart';
+import 'navigation_first.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const LocationScreen(),
+      home: const NavigationFirst(),
     );
   }
 }
