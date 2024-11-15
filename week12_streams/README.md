@@ -1,6 +1,8 @@
 # week12_streams
 
-A new Flutter project.
+Nama: Muhammad Harafsan Alhad
+Kelas: TI-3C
+NIM: 2241720059
 
 ## Getting Started
 
