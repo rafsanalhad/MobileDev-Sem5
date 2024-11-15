@@ -48,7 +48,7 @@ class _StreamHomePageState extends State<StreamHomePage> {
   int myNum = random.nextInt(10);
   numberStream.addNumberToSink(myNum);
 }
-
+ 
   void initState() {
     numberStream = NumberStream();
     numberStreamController = numberStream.controller;
@@ -58,6 +58,7 @@ class _StreamHomePageState extends State<StreamHomePage> {
         lastNumber = event;
       });
     });
+    //sudah hapus onerror
     super.initState();
     
   }
