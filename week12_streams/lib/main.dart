@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Rafsan',
+      title: 'Rafsan Alhad',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
@@ -45,13 +45,19 @@ class _StreamHomePageState extends State<StreamHomePage> {
         bgColor = eventColor;
       });
     }
+
+    // colorStream.getColors().listen((eventColor)){
+    //   setState(() {
+    //     bgColor = eventColor;
+    //   })
+    // }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Rafsan'),
+        title: const Text('Rafsan Alhad'),
       ),
       body: Container(
         decoration: BoxDecoration(color: bgColor)
