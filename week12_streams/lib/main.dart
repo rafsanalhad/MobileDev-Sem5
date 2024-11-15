@@ -36,31 +36,46 @@ class _StreamHomePageState extends State<StreamHomePage> {
   late NumberStream numberStream;
   Color bgColor = Colors.blueGrey;
   late ColorStream colorStream;
+  late StreamTransformer<int, int>
+      transformer; // Menggunakan tipe data yang benar
 
   @override
-  void dispose(){
+  void dispose() {
     numberStreamController.close();
     super.dispose();
   }
 
   void addRandomNumber() {
-  Random random = Random();
-  int myNum = random.nextInt(10);
-  numberStream.addNumberToSink(myNum);
-}
- 
+    Random random = Random();
+    int myNum = random.nextInt(10);
+    numberStream.addNumberToSink(myNum);
+  }
+
   void initState() {
+    transformer = StreamTransformer<int, int>.fromHandlers(
+      handleData: (value, sink) {
+        sink.add(value * 10);
+      },
+      handleError: (error, trace, sink) {
+        sink.add(-1);
+      },
+      handleDone: (sink) => sink.close(),
+    );
+
     numberStream = NumberStream();
     numberStreamController = numberStream.controller;
     Stream stream = numberStreamController.stream;
-    stream.listen((event){
-      setState(() {
+    stream.transform(transformer).listen((event){
+      setState((){
         lastNumber = event;
+      });
+    }).onError((error){
+      setState(() {
+        lastNumber -1;
       });
     });
     //sudah hapus onerror
     super.initState();
-    
   }
 
   void changeColor() async {
@@ -84,19 +99,18 @@ class _StreamHomePageState extends State<StreamHomePage> {
           title: const Text('Rafsan Alhad'),
         ),
         body: SizedBox(
-          width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-            Text(lastNumber.toString()),
-            ElevatedButton(
-              onPressed: () => addRandomNumber(),
-              child: const Text('New Random Number'),
-            )
-          ],)
-        )
-    );
+            width: double.infinity,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(lastNumber.toString()),
+                ElevatedButton(
+                  onPressed: () => addRandomNumber(),
+                  child: const Text('New Random Number'),
+                )
+              ],
+            )));
   }
 }
 
