@@ -3,6 +3,7 @@ import 'stream.dart';
 import 'dart:async';
 import 'dart:math';
 import 'numberStream.dart';
+import 'random_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: const StreamHomePage(),
+      home: const RandomScreen(),
     );
   }
 }
@@ -58,6 +59,10 @@ class _StreamHomePageState extends State<StreamHomePage> {
   // String values = '';
 
   @override
+  // void dispose(){
+  //   _bloc.dispose();
+  //   super.dispose();
+  // }
   // void dispose() {
   //   numberStreamController.close();
   //   subscription.cancel();
