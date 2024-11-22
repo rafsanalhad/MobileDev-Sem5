@@ -1,10 +1,8 @@
-# week12_streams
+# week13 Persistensi Data
 
 Nama: Muhammad Harafsan Alhad  
 Kelas: TI-3C  
 NIM: 2241720059  
-
-## Week 1 - Week 7 Practical Results
 
 Pada praktikum ini, saya telah menyelesaikan praktikum 1 - 6.
 ### Praktikum 1 - Converting Dart models into JSON
