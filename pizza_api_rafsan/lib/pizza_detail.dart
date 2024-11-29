@@ -3,7 +3,9 @@ import 'pizza.dart';
 import 'httphelper.dart';
 
 class PizzaDetailScreen extends StatefulWidget {
-  const PizzaDetailScreen({super.key});
+  final Pizza pizza;
+  final bool isNew;
+  const PizzaDetailScreen({super.key, required this.pizza, required this.isNew});
 
   @override
   State<PizzaDetailScreen> createState() => _PizzaDetailScreenState();
@@ -30,6 +32,28 @@ class _PizzaDetailScreenState extends State<PizzaDetailScreen> {
       operationResult = result;
     });
   }
+  Future putPizza() async {
+    HttpHelper helper = HttpHelper();
+    Pizza pizza = Pizza(
+      id: int.tryParse(txtId.text) ?? 0,
+      pizzaName: txtName.text,
+      description: txtDescription.text,
+      price: double.tryParse(txtPrice.text) ?? 0.0,
+      imageUrl: txtImageUrl.text,
+    );
+    String result = await helper.putPizza(pizza);
+    setState(() {
+      operationResult = result;
+    });
+  }
+
+  Future savePizza() async {
+    final result = widget.isNew ? await putPizza() : await postPizza();
+    setState((){
+      operationResult = result;
+    });
+  }
+
 
   @override
   void dispose() {
@@ -39,6 +63,15 @@ class _PizzaDetailScreenState extends State<PizzaDetailScreen> {
     txtPrice.dispose();
     txtImageUrl.dispose();
     super.dispose();
+  }
+  void initState(){
+    if(!widget.isNew){
+      txtId.text = widget.pizza.id.toString();
+      txtName.text = widget.pizza.pizzaName;
+      txtDescription.text = widget.pizza.price.toString();
+      txtImageUrl.text = widget.pizza.imageUrl;
+    }
+    super.initState();
   }
 
   Widget build(BuildContext context) {
@@ -82,7 +115,7 @@ class _PizzaDetailScreenState extends State<PizzaDetailScreen> {
                 ElevatedButton(
                     child: const Text('Send Post'),
                     onPressed: () {
-                      postPizza();
+                      savePizza();
                     })
               ]),
             )));

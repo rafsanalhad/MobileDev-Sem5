@@ -1,9 +1,9 @@
 class Pizza {
-  int id;
-  String pizzaName;
-  String description;
-  double price;
-String imageUrl;
+  int id = 0;
+  String pizzaName = '';
+  String description = '';
+  double price = 0;
+String imageUrl = '';
 
   // Constructor
   Pizza({

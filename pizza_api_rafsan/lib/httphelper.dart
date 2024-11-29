@@ -27,4 +27,21 @@ class HttpHelper {
     http.Response r = await http.post(url, body: post);
     return r.body;
   }
+
+  Future<String> putPizza(Pizza pizza) async{
+    const putPath = '/pizza';
+    String put = json.encode(pizza.toJson());
+    Uri url = Uri.https(authority, putPath);
+    http.Response r = await http.put(
+      url,
+      body: put,
+    );
+    return r.body;
+  }
+  Future<String> deletePizza(int id) async {
+    const deletePath = '/pizza';
+    Uri uri = Uri.https(authority, deletePath);
+    http.Response r = await http.delete(uri);
+    return r.body;
+  }
 }
