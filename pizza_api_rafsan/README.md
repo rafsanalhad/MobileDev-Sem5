@@ -1,6 +1,21 @@
-# pizza_api_rafsan
+# week14 RestFul API
 
-A new Flutter project.
+Nama: Muhammad Harafsan Alhad  
+Kelas: TI-3C  
+NIM: 2241720059  
+
+Pada praktikum ini, saya telah menyelesaikan praktikum 1 - 4.
+### Praktikum 1
+![Praktikum 1](assets/images/Praktikum_1_RestAPI.png)
+
+### Praktikum
+![Praktikum 2](assets/images/Praktikum_2_RestAPI.png)
+
+### Praktikum 3
+![Praktikum 3](assets/images/Pratkikum_3_RestAPI.png)
+
+### Praktikum 4
+![Praktikum 4](assets/images/Praktikum_4_RestAPI.gif)
 
 ## Getting Started
 
@@ -12,5 +27,4 @@ A few resources to get you started if this is your first Flutter project:
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
 For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[online documentation](https://docs.flutter.dev/), which offers tutorials, samples, guidance on mobile development, and a full API reference.
