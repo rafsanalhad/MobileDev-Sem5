@@ -8,7 +8,7 @@ Pada praktikum ini, saya telah menyelesaikan praktikum 1 - 4.
 ### Praktikum 1
 ![Praktikum 1](assets/images/Praktikum_1_RestAPI.png)
 
-### Praktikum
+### Praktikum 2
 ![Praktikum 2](assets/images/Praktikum_2_RestAPI.png)
 
 ### Praktikum 3
