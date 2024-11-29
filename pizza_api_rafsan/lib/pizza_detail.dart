@@ -48,7 +48,7 @@ class _PizzaDetailScreenState extends State<PizzaDetailScreen> {
   }
 
   Future savePizza() async {
-    final result = widget.isNew ? await putPizza() : await postPizza();
+    final result = widget.isNew ? await postPizza() : await putPizza();
     setState((){
       operationResult = result;
     });
